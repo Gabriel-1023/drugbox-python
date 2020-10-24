@@ -29,7 +29,7 @@ class CodeDetect():
             code = self.decodeDisplay(gray)
             # cv2.waitKey(5)
             # cv2.imshow("camera", image)
-            if code != None:
+            if code is not None:
                 self.camera.release()
                 cv2.destroyAllWindows()
                 return code
