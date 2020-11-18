@@ -5,9 +5,8 @@ import uuid
 
 
 class myThread1(threading.Thread):
-    def __init__(self, s):
+    def __init__(self):
         threading.Thread.__init__(self)
-        self.s = s
 
     def run(self):
         print("开始发送心跳")
@@ -16,27 +15,26 @@ class myThread1(threading.Thread):
         # mac = hex(uuid.getnode())[2:]
         # mac = '-'.join(mac[i:i + 2] for i in range(0, len(mac), 2))
         mac = '11-11-11-11-11-11'
-        self.s.send(mac.encode())
+        s.send(mac.encode())
         time.sleep(1)
         while True:
-            self.s.send(a)
+            s.send(a)
             time.sleep(3)
 
 
 class myThread2(threading.Thread):
-    def __init__(self, s):
+    def __init__(self):
         threading.Thread.__init__(self)
-        self.s = s
 
     def run(self):
         print("开始接收信息")
         while True:
-            str = self.s.recv(1024).decode()
+            str = s.recv(1024).decode()
             print(str)
 
 
 mac = hex(uuid.getnode())[2:]
-mac = '-'.join(mac[i:i + 2] for i in range(0, len(mac), 2))
+mac = '-'.join(mac[drug:drug + 2] for drug in range(0, len(mac), 2))
 print(mac)
 
 s = socket.socket()
@@ -45,8 +43,8 @@ port = 8086
 s.connect((host, port))
 
 # 创建新线程
-thread1 = myThread1(s)
-# thread2 = myThread2(s)
+thread1 = myThread1()
+# thread2 = myThread2()
 
 # 开启新线程
 thread1.start()

@@ -1,0 +1,3 @@
+[{"drugid":"111111","name":"咳特灵","producer":"东大智能药箱项目组","usemethod":"阿巴阿巴","from":"注射剂"},
+{"drugid":"111112","name":"啊啊啊啊","producer":"啊啊啊啊啊啊","usemethod":"啊啊啊啊","from":"安安"},
+{"drugid":"111113","name":"阿莫西林","producer":"哼哼哈嘿","usemethod":"阿巴阿巴","from":"口服"}]
