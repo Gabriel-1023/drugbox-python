@@ -78,7 +78,8 @@ class myThread1(threading.Thread):
                 mac = '11-11-11-11-11-11'
                 global s, status
                 s.send(mac.encode())
-                print("连接成功")
+                sys.stdout.write("\r连接成功")
+                sys.stdout.flush()
                 v.set("连接成功")
                 status = 1
                 time.sleep(1)
@@ -86,7 +87,8 @@ class myThread1(threading.Thread):
                     s.send(a)
                     time.sleep(3)
             except socket.error:
-                print("socket 错误，重连ing....")
+                sys.stdout.write("\rsocket 错误，重连ing....")
+                sys.stdout.flush()
                 v.set("断线重连....")
                 status = 0
                 s = doConnect(host, port)
